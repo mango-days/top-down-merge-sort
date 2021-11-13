@@ -1,6 +1,6 @@
 array=[10, 3, 19, 3, 7, 18, 4, 15, 5]
 
-def sort(array1, array2):
+def re_arrange(array1, array2):
     ans=[]
     index1=0
     index2=0
@@ -33,8 +33,8 @@ def separate(array):
     right_index=len(array)
     left_index=1
     if (len(array)>1): 
-        bisection=int(left_index + (right_index-1)/2)
-        ans=(sort (separate(array[:bisection]),separate(array[bisection:])))
+        middle_index=int(left_index + (right_index-1)/2)
+        ans=(re_arrange (separate(array[:middle_index]),separate(array[middle_index:])))
         return (ans)
     return (array)
     
