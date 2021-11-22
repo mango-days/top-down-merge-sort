@@ -8,25 +8,24 @@ def re_arrange(array1, array2):
         if array1[index1]>array2[index2]:
             ans.append(array2[index2])
             index2+=1
-            if (index1==len(array1)):
-                while(index2!=len(array2)): 
-                    ans.append(array2[index2])
-                    index2+=1
-                break
         elif array1[index1]<array2[index2]:
             ans.append(array1[index1])
             index1+=1
-            if (index2==len(array2)): 
-                while(index1!=len(array1)): 
-                    ans.append(array1[index1])
-                    index1+=1
-                break
         else:   # array1[index1]==array2[index2]:
             ans.append(array1[index1])
             ans.append(array2[index2])
             index1+=1
             index2+=1
-            
+        
+        if (index1==len(array1)):
+            while(index2!=len(array2)): 
+                ans.append(array2[index2])
+                index2+=1
+        elif (index2==len(array2)): 
+            while(index1!=len(array1)): 
+                ans.append(array1[index1])
+                index1+=1
+                
         if (len(ans)==(len(array1)+len(array2))): break
     return(ans)
     
